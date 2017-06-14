@@ -1,0 +1,29 @@
+﻿@model FullstackCourse.ViewModels.GigFormViewModel
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+<h2>Create</h2>
+
+ 
+<form>
+    <div class="form-group">
+        <!-- Here we create label and a text box and then refer to what method we are creating this for.
+            m  in this refers to Models and then m.venu refers to the method venu in the package model
+             . The method itself is located in IdentityModels.cs class-->
+        @Html.LabelFor(m => m.Venu)
+        @Html.TextBoxFor(m => m.Venu)
+    </div>
+
+    <div class="form-group">
+
+        @Html.LabelFor(m => m.DateTime)
+    </div>
+    <div class="form-group"></div>
+    <div class="form-group"></div>
+    <div class="form-group"></div>
+    <div class="form-group"></div>
+
+
+</form>
