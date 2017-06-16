@@ -13,17 +13,24 @@
             m  in this refers to Models and then m.venu refers to the method venu in the package model
              . The method itself is located in IdentityModels.cs class-->
         @Html.LabelFor(m => m.Venu)
-        @Html.TextBoxFor(m => m.Venu)
+        @Html.TextBoxFor(m => m.Venu, new { @class = "form-control" })
     </div>
 
     <div class="form-group">
-
-        @Html.LabelFor(m => m.DateTime)
+        @Html.LabelFor(m => m.Date)
+        @Html.TextBoxFor(m => m.Date, new { @class = "form-control" })
     </div>
-    <div class="form-group"></div>
-    <div class="form-group"></div>
-    <div class="form-group"></div>
-    <div class="form-group"></div>
-
+    <div class="form-group">
+        @Html.LabelFor(m => m.Time)
+        @Html.TextBoxFor(m => m.Time, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Genre)
+        <!-- The reason we add "" after name is to make the list start at a blank
+            , and the last argument (form-control) is to make it look like
+            bootstrap. -->
+        @Html.DropDownListFor(m => m.Genre, new SelectList(Model.Genres, "Id", "Name"), "", new { @class = "form-control" })
+    </div> 
+    <button type="submit" class="btn btn-primary">Save</button>
 
 </form>
