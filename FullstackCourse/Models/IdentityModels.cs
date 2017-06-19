@@ -20,8 +20,10 @@ namespace FullstackCourse.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public DbSet<Gig> gigs { get; set; }
+        public DbSet<Gig> Gigs { get; set; }
         public DbSet<Genre> Genres { get; set; }
+       // public object Gigs { get;  set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
